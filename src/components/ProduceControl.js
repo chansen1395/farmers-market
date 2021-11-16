@@ -1,13 +1,13 @@
 import React from "react";
 import ProduceList from "./ProduceList";
-import Produce from "./Produce";
+// import Produce from "./Produce";
 
 class ProduceControl extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      availableProduce[0];
+      availableProduce[1];
     };
     this.handleClick = this.handleClick.bind(this); //new code here
   }
