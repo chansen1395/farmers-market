@@ -5,9 +5,9 @@ function Produce(props){
   return (
     <React.Fragment>
       <h3>{props.month}</h3>
-      <ul>
-        <li>{props.selection}</li>
-      </ul>
+      <p>{props.selection.map((produce) =>
+        <li>{produce}</li>
+      )}</p>
       <hr/>
     </React.Fragment>
   );
@@ -15,7 +15,7 @@ function Produce(props){
 
 Produce.propTypes = {
   month: PropTypes.string.isRequired,
-  selection: PropTypes.string
+  selection: PropTypes.array
 };
 
 export default Produce;

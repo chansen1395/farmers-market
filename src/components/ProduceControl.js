@@ -1,38 +1,49 @@
 import React from "react";
 import ProduceList from "./ProduceList";
-// import Produce from "./Produce";
+import Produce from "./Produce";
 
 class ProduceControl extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      availableProduce[1];
+      visibleMonth: props
     };
-    this.handleClick = this.handleClick.bind(this); //new code here
+    // this.handleClick = this.handleClick.bind(this); //new code here
   }
 
-  handleClick() {
+  handleClick = () => {
     this.setState(prevState => ({
-      formVisibleOnPage: !prevState.formVisibleOnPage
+      visibleMonth: !prevState.visibleMonth
     }));
   }
 
+  // handleClick().then(response => {
+  //   this.setState({
+  //       month: response.month
+  //       selection: response.selection
+  //     });
+  //   });
+
   render(){
-    let currentlyVisibleState = null;
-    let buttonText = null; // new code
-    if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <ProduceList />;
-      buttonText = "Add Ticket"; // new code
+    let currentlyVisibleMonth = null;
+    // let buttonText = null; // new code
+    if (this.state.visibleMonth) {
+      currentlyVisibleMonth = <ProduceList />;
+      // buttonText = "Add Ticket"; // new code
+    } else {
+      currentlyVisibleMonth = <ProduceList />
     }
     return (
       <React.Fragment>
-        {currentlyVisibleState}
-        <button onClick={this.handleClick}>{buttonText}</button> { /* new code */ }
+         {currentlyVisibleMonth}
+        {/* {this.state.visibleMonth[0]} */}
+        {/* <button onClick={this.handleClick}>{buttonText}</button> { /* new code */ }
       </React.Fragment>
     );
   }
 
 }
+
 
 export default ProduceControl;
